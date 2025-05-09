@@ -4,7 +4,7 @@ from flask import Flask,request,render_template
 from datetime import date
 from datetime import datetime
 import numpy as np
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import KNeighborsClassifier      
 import pandas as pd
 import joblib
 # Defining Flask App
@@ -95,9 +95,10 @@ def start():
     cap = cv2.VideoCapture(0)
     ret = True
     while ret:
-        ret,frame = cap.read()
-        if extract_faces(frame)!=():
-            (x,y,w,h) = extract_faces(frame)[0]
+        ret, frame = cap.read()
+        faces = extract_faces(frame)
+        if len(faces) > 0:
+            (x, y, w, h) = faces[0]
             cv2.rectangle(frame,(x, y), (x+w, y+h), (255, 0, 20), 2)
             face = cv2.resize(frame[y:y+h,x:x+w], (50, 50))
             identified_person = identify_face(face.reshape(1,-1))[0]
