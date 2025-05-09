@@ -4,8 +4,8 @@ in this project we have implement a model which captures the images of the stude
 in form or 120 * 120 matrix and matches with the current matrix at the time of attendence and mark the attendance accordingly and 
 provides excel sheet of the attendance .
 
-python
-machine learning
-eigen vector algo
-face recognition
-flask web development
+python,
+machine learning,
+eigen vector algo,
+face recognition,
+flask web development.
